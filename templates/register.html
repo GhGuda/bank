@@ -1,0 +1,61 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Register</title>
+    <link rel="stylesheet" href="{% static 'bank-login-styles.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo">
+                {% comment %} <img src="{% static 'bank-logo.png' %}" alt="Bank Logo"> {% endcomment %}
+            </div>
+            <h2>Register</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="number" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password2">Password2</label>
+                    <input type="password2" id="password" name="password2" required>
+                </div>
+                {% for msg in messages %}
+                <p style="color: red;">{{msg}}</p>
+                {% endfor %}
+                <button type="submit" class="login-btn">Login</button>
+                <div class="security-tips">
+                    <p>🔒 Secure Login. For assistance, call customer service at 1-800-123-4567.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
