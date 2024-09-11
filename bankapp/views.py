@@ -60,7 +60,7 @@ def register(request):
                 )
                 user.save()
                 messages.success(request, 'Account created successfully!')
-                return redirect(login)
+                return redirect("login")
         else:
             messages.error(request, "Password did not match!")
             return redirect('register')
