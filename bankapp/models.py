@@ -9,8 +9,8 @@ class CustomUser(AbstractUser):
     fullname=models.CharField(max_length=1000)
     phone = models.CharField(max_length=100)
     account_number = models.CharField(max_length=100)
-    savings_amount = models.FloatField()
-    current_amount = models.FloatField()
+    savings_amount = models.FloatField(default="0.0")
+    current_amount = models.FloatField(default="0.0")
     
     
     def generate_unique_account_number(self):

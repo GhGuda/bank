@@ -19,8 +19,7 @@ def login_view(request):
         # hashed_identifier = hash_input(identifier)
         # hashed_password = hash_input(password)
         
-        print(identifier)
-        print(password)
+        
 
 
         
